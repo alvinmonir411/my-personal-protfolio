@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alvin Monir | Front-end dev</title>
+    <!-- tailwind CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- deisyUI cdn -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font-family -->
+    <!-- connetc css -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      .poppins_regular {
+        font-family: "Poppins", serif;
+        font-weight: 400;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .primary_color {
+        color: #ffbd39;
+      }
+    </style>
+  </head>
+  <body class="poppins_regular bg-black">
+    <!-- for navber -->
+    <nav class="container mx-auto">
+      <div class="navbar bg-black text-white">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-black text-center rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a href="#Home">Home</a>
+              </li>
+              <li><a href="#about">About</a></li>
+              <li><a>Resume</a></li>
+              <li><a>Services</a></li>
+              <li><a>skills</a></li>
+              <li><a>projects</a></li>
+              <li><a>My Blog</a></li>
+              <li><a>contact</a></li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-ghost md:text-5xl capitalize text-orange-500 md:ml-4 ml-0"
+            >Alvin-monir</a
+          >
+        </div>
+        <div class="navbar-center hidden bg-black lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <a class="hover:underline hover:text-orange-500 capitalize"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:underline hover:text-orange-500 capitalize"
+                href="#about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a class="hover:underline hover:text-orange-500 capitalize"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a class="hover:underline hover:text-orange-500 capitalize"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a class="hover:underline hover:text-orange-500 capitalize"
+                >skills</a
+              >
+            </li>
+            <li>
+              <a class="hover:underline hover:text-orange-500 capitalize"
+                >projects</a
+              >
+            </li>
+            <li>
+              <a class="hover:underline hover:text-orange-500 capitalize"
+                >My Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class="btn bg-[#ffbd39] text-white border-none px-8">contact</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container mx-auto">
+      <!-- banner section -->
+      <section id="Home">
+        <div class="carousel w-full px-10 mx-auto">
+          <div
+            id="slide1"
+            class="carousel-item relative w-full flex flex-col md:flex-row justify-between items-center p-10"
+          >
+            <div class="text-left md:pl-16 space-y-4">
+              <p class="text-yellow-500 font-semibold">HELLO!</p>
+              <h1 class="text-8xl font-bold text-white">
+                I'm <span class="text-yellow-500"> Alvin-monir</span>
+              </h1>
+              <p class="text-lg text-white">A Freelance Web Devloper</p>
+              <div class="flex space-x-4">
+                <button class="btn btn-warning">HIRE ME</button>
+                <button class="btn btn-outline btn-white text-white">
+                  MY WORKS
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+              <img
+                src="img/hero1.png"
+                class="rounded-lg shadow-lg max-w-lg"
+                alt="Hero Image 1"
+              />
+            </div>
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide2" class="btn btn-circle">❮</a>
+              <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div
+            id="slide2"
+            class="carousel-item relative w-full flex flex-col md:flex-row items-center p-10"
+          >
+            <div class="text-left md:pl-16 space-y-4">
+              <p class="text-yellow-500 font-semibold">HELLO!</p>
+              <h1 class="text-6xl font-bold text-white">
+                I'm
+                <span class="text-yellow-500">
+                  web devloper based <br />in Bangladesh
+                </span>
+              </h1>
+              <p class="text-lg text-white capitalize"></p>
+              <div class="flex space-x-4">
+                <button class="btn btn-warning">HIRE ME</button>
+                <button class="btn btn-outline btn-white text-white">
+                  MY WORKS
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+              <img
+                src="img/hero2.png"
+                class="rounded-lg shadow-lg max-w-lg"
+                alt="Hero Image 2"
+              />
+            </div>
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+            >
+              <a href="#slide1" class="btn btn-circle">❮</a>
+              <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- about section -->
+      <section id="about" class="mt-24 mb-12 px-6">
+        <div
+          class="flex flex-col md:flex-row items-center w-full gap-12 md:gap-32"
+        >
+          <!-- Image Section -->
+          <div class="w-full md:w-1/2">
+            <img
+              src="img/hero1.png"
+              class="w-full h-auto object-cover rounded-lg"
+              alt="Profile Image"
+            />
+          </div>
+
+          <!-- Text Section -->
+          <div class="w-full md:w-1/2 text-white">
+            <h2
+              class="text-4xl md:text-7xl font-bold mb-4 md:mb-7 text-center md:text-left"
+            >
+              About Me
+            </h2>
+            <p
+              class="text-gray-400 text-sm md:text-base text-center md:text-left mb-6"
+            >
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia.
+            </p>
+
+            <div class="space-y-2 md:space-y-4 text-center md:text-left">
+              <p class="font-bold text-lg md:text-3xl">
+                <span class="font-bold pr-3 md:pr-7">Name:</span> Alvin-Monir
+              </p>
+              <p>
+                <span class="font-bold">Date of birth:</span> January 01, 2001
+              </p>
+              <p>
+                <span class="font-bold pr-3">Address:</span> San Francisco CA
+                97987 USA
+              </p>
+              <p><span class="font-bold pr-3">Zip code:</span> 1000</p>
+              <p><span class="font-bold pr-9">Email:</span> Alvin-Monir</p>
+              <p><span class="font-bold pr-7">Phone:</span> +1-2234-5678-9-0</p>
+            </div>
+
+            <div
+              class="mt-6 flex justify-center md:justify-start items-center gap-3"
+            >
+              <p class="text-yellow-400 text-xl font-bold">120</p>
+              <p class="text-white font-bold">Project complete</p>
+            </div>
+
+            <div class="flex justify-center md:justify-start">
+              <a
+                href=""
+                class="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-yellow-400"
+              >
+                DOWNLOAD CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
