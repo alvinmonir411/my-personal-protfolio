@@ -7,7 +7,11 @@
     <!-- tailwind CDN -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <!-- deisyUI cdn -->
-
+    <!-- font awsm cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
       rel="stylesheet"
@@ -29,12 +33,36 @@
       .primary_color {
         color: #ffbd39;
       }
+      @keyframes grow {
+        from {
+          width: 0;
+        }
+        to {
+          width: var(--width);
+        }
+      }
+      .progress-bar {
+        width: 0;
+        height: 6px;
+        background-color: #fbbf24;
+        border-radius: 4px;
+        animation: grow 2s ease-out forwards;
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body class="poppins_regular bg-black">
     <!-- for navber -->
     <nav class="container mx-auto">
-      <div class="navbar bg-black text-white">
+      <div class="navbar sticky top-0 left-0 bg-black text-white">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -63,10 +91,10 @@
               <li><a href="#about">About</a></li>
               <li><a href="#Resume">Resume</a></li>
               <li><a href="#services">Services</a></li>
-              <li><a>skills</a></li>
-              <li><a>projects</a></li>
-              <li><a>My Blog</a></li>
-              <li><a>contact</a></li>
+              <li><a href="#Skills">skills</a></li>
+              <li><a href="#project">projects</a></li>
+              <li><a href="#blog">My Blog</a></li>
+              <li><a href="#contact">contact</a></li>
             </ul>
           </div>
           <a
@@ -103,94 +131,124 @@
               >
             </li>
             <li>
-              <a class="hover:underline hover:text-orange-500 capitalize"
+              <a
+                href="#Skills"
+                class="hover:underline hover:text-orange-500 capitalize"
                 >skills</a
               >
             </li>
             <li>
-              <a class="hover:underline hover:text-orange-500 capitalize"
+              <a
+                href="#project"
+                class="hover:underline hover:text-orange-500 capitalize"
                 >projects</a
               >
             </li>
             <li>
-              <a class="hover:underline hover:text-orange-500 capitalize"
+              <a
+                href="#blog"
+                class="hover:underline hover:text-orange-500 capitalize"
                 >My Blog</a
               >
             </li>
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn bg-[#ffbd39] text-white border-none px-8">contact</a>
+          <a
+            href="#contact"
+            class="btn bg-[#ffbd39] text-white border-none px-8"
+            >contact</a
+          >
         </div>
       </div>
     </nav>
     <main class="container mx-auto">
       <!-- banner section -->
       <section id="Home">
-        <div class="carousel w-full px-10 mx-auto">
+        <div class="carousel w-full text-white px-4 sm:px-10 mx-auto">
+          <!-- Slide 1 -->
           <div
             id="slide1"
-            class="carousel-item relative w-full flex flex-col md:flex-row justify-between items-center p-10"
+            class="carousel-item relative w-full flex flex-col md:flex-row justify-between items-center p-6 md:p-10"
           >
-            <div class="text-left pl-5 md:pl-16 space-y-4">
+            <div class="text-left space-y-4 md:w-1/2">
               <p class="text-yellow-500 font-semibold">HELLO!</p>
-              <h1 class="text-8xl font-bold text-white">
-                I'm <span class="text-yellow-500"> Alvin-monir</span>
+              <h1 class="text-5xl md:text-8xl font-bold">
+                I'm <span class="text-yellow-500">Alvin-Monir</span>
               </h1>
-              <p class="text-lg text-white">A Freelance Web Devloper</p>
-              <div class="flex space-x-4">
-                <button class="btn btn-warning">HIRE ME</button>
-                <button class="btn btn-outline btn-white text-white">
+              <p class="text-lg">A Freelance Web Developer</p>
+              <div class="flex flex-wrap gap-4">
+                <button
+                  class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold"
+                >
+                  HIRE ME
+                </button>
+                <button
+                  class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold"
+                >
                   MY WORKS
                 </button>
               </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
+            <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
               <img
                 src="img/hero1.png"
-                class="rounded-lg shadow-lg max-w-lg"
+                class="rounded-lg shadow-lg max-w-full h-auto"
                 alt="Hero Image 1"
               />
             </div>
             <div
-              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+              class="absolute flex justify-between transform -translate-y-1/2 left-4 right-4 top-1/2"
             >
-              <a href="#slide2" class="btn btn-circle">❮</a>
-              <a href="#slide2" class="btn btn-circle">❯</a>
+              <a href="#slide2" class="bg-gray-800 text-white p-2 rounded-full"
+                >❮</a
+              >
+              <a href="#slide2" class="bg-gray-800 text-white p-2 rounded-full"
+                >❯</a
+              >
             </div>
           </div>
+
+          <!-- Slide 2 -->
           <div
             id="slide2"
-            class="carousel-item relative w-full flex flex-col md:flex-row items-center p-16"
+            class="carousel-item relative w-full flex flex-col md:flex-row justify-between items-center p-6 md:p-10"
           >
-            <div class="text-left md:pl-16 space-y-4">
+            <div class="text-left space-y-4 md:w-1/2">
               <p class="text-yellow-500 font-semibold">HELLO!</p>
-              <h1 class="text-6xl font-bold text-white">
-                I'm
-                <span class="text-yellow-500">
-                  web devloper based <br />in Bangladesh
-                </span>
+              <h1 class="text-5xl md:text-6xl font-bold">
+                I'm <span class="text-yellow-500">a web developer</span> based
+                in Bangladesh
               </h1>
-              <p class="text-lg text-white capitalize"></p>
-              <div class="flex space-x-4">
-                <button class="btn btn-warning ml-2">HIRE ME</button>
-                <button class="btn btn-outline btn-white text-white">
+              <div class="flex flex-wrap gap-4">
+                <button
+                  class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold"
+                >
+                  HIRE ME
+                </button>
+                <button
+                  class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold"
+                >
                   MY WORKS
                 </button>
               </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
+            <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
               <img
                 src="img/hero2.png"
-                class="rounded-lg shadow-lg max-w-lg"
+                class="rounded-lg shadow-lg max-w-full h-auto"
                 alt="Hero Image 2"
               />
             </div>
             <div
-              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+              class="absolute flex justify-between transform -translate-y-1/2 left-4 right-4 top-1/2"
             >
-              <a href="#slide1" class="btn btn-circle">❮</a>
-              <a href="#slide1" class="btn btn-circle">❯</a>
+              <a href="#slide1" class="bg-gray-800 text-white p-2 rounded-full"
+                >❮</a
+              >
+              <a href="#slide1" class="bg-gray-800 text-white p-2 rounded-full"
+                >❯</a
+              >
             </div>
           </div>
         </div>
@@ -270,7 +328,7 @@
         </p>
         <!-- main cart div -->
         <div
-          class="grid md:grid-cols-2 justify-around items-center gap-10 md:gap-20 mt-24"
+          class="grid md:grid-cols-2 justify-around items-center gap-10 md:gap-4 mt-24"
         >
           <!--1st left   -->
           <div
@@ -376,69 +434,464 @@
         </div>
       </section>
       <!-- services -->
-      <section id="services" class="services text-white mt-12">
+      <section id="services" class="services text-white mt-12 mb-24">
         <h1 class="text-4xl md:text-7xl font-bold md:mb-3 text-center">
           services
         </h1>
-        <p class="text-center text-gray-200">
+        <p class="text-center text-gray-200 mb-12">
           A small river named Duden flows by their place and supplies it with
           the necessary regelialia.
         </p>
         <!-- cart section -->
+        <!--main div-->
         <div
-          class="flex flex-wrap justify-center items-center min-h-screen bg-black text-white"
+          class="grid md:grid-cols-3 gap-9 justify-center items-center m-5 mb-12"
         >
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-            <!-- Card 1 -->
-            <div
-              class="group w-64 h-40 bg-gray-900 rounded-xl flex flex-col items-center justify-center transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-gray-800 hover:shadow-lg"
-            >
-              <div class="text-yellow-400 text-4xl">🔍</div>
-              <p class="mt-3 text-lg font-semibold">Web Design</p>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="group w-64 h-40 bg-gray-900 rounded-xl flex flex-col items-center justify-center transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-gray-800 hover:shadow-lg"
-            >
-              <div class="text-yellow-400 text-4xl">🧪</div>
-              <p class="mt-3 text-lg font-semibold">Photography</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-              class="group w-64 h-40 bg-gray-900 rounded-xl flex flex-col items-center justify-center transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-gray-800 hover:shadow-lg"
-            >
-              <div class="text-yellow-400 text-4xl">📦</div>
-              <p class="mt-3 text-lg font-semibold">Web Developer</p>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-              class="group w-64 h-40 bg-gray-900 rounded-xl flex flex-col items-center justify-center transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-gray-800 hover:shadow-lg"
-            >
-              <div class="text-yellow-400 text-4xl">🔍</div>
-              <p class="mt-3 text-lg font-semibold">App Developing</p>
-            </div>
-
-            <!-- Card 5 -->
-            <div
-              class="group w-64 h-40 bg-gray-900 rounded-xl flex flex-col items-center justify-center transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-gray-800 hover:shadow-lg"
-            >
-              <div class="text-yellow-400 text-4xl">🧪</div>
-              <p class="mt-3 text-lg font-semibold">Branding</p>
-            </div>
-
-            <!-- Card 6 -->
-            <div
-              class="group w-64 h-40 bg-gray-900 rounded-xl flex flex-col items-center justify-center transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:bg-gray-800 hover:shadow-lg"
-            >
-              <div class="text-yellow-400 text-4xl">📦</div>
-              <p class="mt-3 text-lg font-semibold">Product Strategy</p>
-            </div>
+          <!-- 1st card -->
+          <div
+            class="md:flex flex-col justify-center items-center space-y-3 bg-[#1A1A1A] shadow-md shadow-[#1A1A1A] p-5 text-center transition duration-300 hover:bg-[#ffbd39]"
+          >
+            <i
+              class="fa-brands fa-webflow text-5xl hover:text-[#ffffff] transition duration-100"
+            ></i>
+            <h1 class="text-3xl">web devlopment</h1>
+            <span class="text-white">______</span>
+          </div>
+          <!-- 2nd card -->
+          <div
+            class="md:flex flex-col justify-center items-center space-y-3 bg-[#1A1A1A] shadow-md shadow-[#1A1A1A] p-5 transition duration-300 hover:bg-[#ffbd39] text-center"
+          >
+            <i
+              class="fa-brands fa-slack text-5xl hover:text-[#ffffff] transition duration-100"
+            ></i>
+            <h1 class="text-3xl capitalize">photograpy</h1>
+            <span class="text-white">______</span>
+          </div>
+          <!-- 3rd -->
+          <div
+            class="md:flex flex-col justify-center items-center space-y-3 text-center bg-[#1A1A1A] shadow-md shadow-[#1A1A1A] p-5 transition duration-300 hover:bg-[#ffbd39]"
+          >
+            <i
+              class="fa-brands fa-stack-overflow text-5xl hover:text-[#ffffff] transition duration-100"
+            ></i>
+            <h1 class="text-3xl capitalize">web Designer</h1>
+            <span class="text-white">______</span>
+          </div>
+          <!-- 4th card -->
+          <div
+            class="md:flex flex-col justify-center items-center space-y-3 text-center bg-[#1A1A1A] shadow-md shadow-[#1A1A1A] p-5 transition duration-300 hover:bg-[#ffbd39]"
+          >
+            <i
+              class="fa-brands fa-webflow text-5xl hover:text-[#ffffff] transition duration-100"
+            ></i>
+            <h1 class="text-3xl">App Devloping</h1>
+            <span class="text-white">______</span>
+          </div>
+          <!-- 5th card -->
+          <div
+            class="md:flex flex-col justify-center items-center space-y-3 text-center bg-[#1A1A1A] shadow-md shadow-[#1A1A1A] p-5 transition duration-300 hover:bg-[#ffbd39]"
+          >
+            <i
+              class="fa-brands fa-webflow text-5xl hover:text-[#ffffff] transition duration-100"
+            ></i>
+            <h1 class="text-3xl">Branding</h1>
+            <span class="text-white">______</span>
+          </div>
+          <!-- 6th card -->
+          <div
+            class="md:flex flex-col justify-center items-center space-y-3 text-center bg-[#1A1A1A] shadow-md shadow-[#1A1A1A] p-5 transition duration-300 hover:bg-[#ffbd39]"
+          >
+            <i
+              class="fa-brands fa-webflow text-5xl hover:text-[#ffffff] transition duration-100"
+            ></i>
+            <h1 class="text-3xl">product Strategy</h1>
+            <span class="text-white">______</span>
           </div>
         </div>
       </section>
+      <!-- section -->
+      <section id="Skills" class="mt-12">
+        <section class="py-10 px-8 text-center text-white">
+          <h2 class="text-3xl md:text-7xl font-bold">My Skills</h2>
+          <p class="text-gray-400 mt-2">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia
+          </p>
+
+          <div class="mt-8 max-w-4xl mx-auto grid md:grid-cols-2 md:gap-20">
+            <div class="space-y-4">
+              <div>
+                <p class="flex justify-between">
+                  <span class="text-3xl font-bold">Photoshop</span>
+                  <span>90%</span>
+                </p>
+                <div
+                  class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"
+                >
+                  <div class="progress-bar" style="--width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <p class="flex justify-between">
+                  <span class="text-3xl font-bold">HTML5</span> <span>95%</span>
+                </p>
+                <div
+                  class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"
+                >
+                  <div class="progress-bar" style="--width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <p class="flex justify-between">
+                  <span class="text-3xl font-bold">WordPress</span>
+                  <span>70%</span>
+                </p>
+                <div
+                  class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"
+                >
+                  <div class="progress-bar" style="--width: 70%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <p class="flex justify-between">
+                  <span class="text-3xl font-bold">jQuery</span>
+                  <span>85%</span>
+                </p>
+                <div
+                  class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"
+                >
+                  <div class="progress-bar" style="--width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <p class="flex justify-between">
+                  <span class="text-3xl font-bold">CSS3</span> <span>90%</span>
+                </p>
+                <div
+                  class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"
+                >
+                  <div class="progress-bar" style="--width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <p class="flex justify-between">
+                  <span class="text-3xl font-bold">SEO</span> <span>50%</span>
+                </p>
+                <div
+                  class="w-full bg-gray-700 h-2 rounded-full overflow-hidden"
+                >
+                  <div class="progress-bar" style="--width: 50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- Projects -->
+      <section class="text-white text-center mt-24 mb-10 md:mb-32">
+        <h1 class="text-3xl md:text-6xl mb-5">My Projects</h1>
+
+        <p class="text-gray-500 mb-12">
+          Far far away, behind the word mountains, far from the countries <br />
+          Vokalia and Consonantia
+        </p>
+        <section
+          id="project"
+          class="flex justify-center items-center bg-black text-white"
+        >
+          <div class="grid md:grid-cols-3 gap-4 max-w-6xl w-full h-full">
+            <!-- First Row -->
+            <div class="relative group h-[40vh]">
+              <img
+                src="img/project-1.jpg"
+                alt="Project 1"
+                class="w-full h-full hidden md:block object-center object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              >
+                <p class="text-white font-bold">
+                  Branding & Illustration Design
+                </p>
+              </div>
+            </div>
+            <div class="relative group col-span-2 h-[40vh]">
+              <img
+                src="img/project-2.jpg"
+                alt="Project 2"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              >
+                <p class="text-white font-bold">Web Design Project</p>
+              </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="relative group col-span-2 h-[40vh]">
+              <img
+                src="img/project-3.jpg"
+                alt="Project 3"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              >
+                <p class="text-white font-bold">Illustration Art</p>
+              </div>
+            </div>
+            <div class="relative group h-[40vh]">
+              <img
+                src="img/project-4.jpg"
+                alt="Project 4"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              >
+                <p class="text-white font-bold">UX/UI Design</p>
+              </div>
+            </div>
+
+            <!-- Third Row -->
+            <div class="relative group h-[40vh]">
+              <img
+                src="img/project-5.jpg"
+                alt="Project 5"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              >
+                <p class="text-white font-bold">Mobile App Design</p>
+              </div>
+            </div>
+            <div class="relative group col-span-2 h-[40vh]">
+              <img
+                src="img/project-6.jpg"
+                alt="Project 6"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-80 transition duration-300 flex items-center justify-center"
+              >
+                <p class="text-white font-bold">Portfolio Showcase</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- extra section -->
     </main>
+    <section
+      id="blog"
+      class="relative bg-black mt-24 w-full md:h-[50vh] bg-cover bg-center"
+      style="background-image: url('img/bg_2.jpg')"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-0"></div>
+
+      <div class="relative container mx-auto text-center text-white py-24">
+        <!-- Stats Boxes -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 -mt-36"
+        >
+          <div
+            class="bg-[#191919] p-6 rounded-lg shadow-lg text-center transform transition duration-500 hover:scale-105"
+          >
+            <h2 class="text-3xl font-bold text-yellow-400 mb-2">100</h2>
+            <p class="text-gray-300">Awards</p>
+          </div>
+          <div
+            class="bg-[#191919] p-6 rounded-lg shadow-lg text-center transform transition duration-500 hover:scale-105"
+          >
+            <h2 class="text-3xl font-bold text-yellow-400">1,200</h2>
+            <p class="text-gray-300">Complete Projects</p>
+          </div>
+          <div
+            class="bg-[#191919] p-6 rounded-lg shadow-lg text-center transform transition duration-500 hover:scale-105"
+          >
+            <h2 class="text-3xl font-bold text-yellow-400">1,200</h2>
+            <p class="text-gray-300">Happy Customers</p>
+          </div>
+          <div
+            class="bg-[#191919] p-6 rounded-lg shadow-lg text-center transform transition duration-500 hover:scale-105"
+          >
+            <h2 class="text-3xl font-bold text-yellow-400">500</h2>
+            <p class="text-gray-300">Cups of Coffee</p>
+          </div>
+        </div>
+
+        <!-- Heading Section -->
+        <h1 class="text-4xl font-bold">
+          I'm <span class="text-yellow-400">Available</span> for freelancing
+        </h1>
+        <p class="text-gray-300 mt-2 max-w-lg mx-auto">
+          A small river named Duden flows by their place and supplies it with
+          the necessary regelialia.
+        </p>
+        <button
+          class="mt-6 px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg shadow-lg transform transition duration-300 hover:scale-110"
+        >
+          HIRE ME
+        </button>
+      </div>
+    </section>
+    <!-- contact section -->
+    <section id="contact" class="container mx-auto mt-24">
+      <div class="bg-black text-white py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold">Contact Me</h2>
+          <p class="text-gray-400">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia
+          </p>
+          <h1 class="text-6xl font-extrabold text-gray-800 opacity-20 -mt-6">
+            Contact
+          </h1>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 text-center gap-6 px-6 max-w-5xl mx-auto"
+        >
+          <div>
+            <i class="fas fa-map-marker-alt text-3xl text-yellow-500"></i>
+            <h3 class="font-bold mt-2">ADDRESS</h3>
+            <p class="text-gray-400">
+              198 West 21th Street, Suite 721 New York NY 10016
+            </p>
+          </div>
+          <div>
+            <i class="fas fa-phone-alt text-3xl text-yellow-500"></i>
+            <h3 class="font-bold mt-2">CONTACT NUMBER</h3>
+            <p class="text-gray-400">+ 1235 2355 98</p>
+          </div>
+          <div>
+            <i class="fas fa-paper-plane text-3xl text-yellow-500"></i>
+            <h3 class="font-bold mt-2">EMAIL ADDRESS</h3>
+            <p class="text-gray-400">info@yoursite.com</p>
+          </div>
+          <div>
+            <i class="fas fa-globe text-3xl text-yellow-500"></i>
+            <h3 class="font-bold mt-2">WEBSITE</h3>
+            <p class="text-gray-400">yoursite.com</p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row max-w-5xl mx-auto mt-12 bg-white rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="w-full md:w-1/2">
+            <img
+              src="img/hero2.png"
+              alt="Person"
+              class="w-full h-full bg-[#1E1E1E] object-cover"
+            />
+          </div>
+          <div class="w-full md:w-1/2 p-6">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="w-full p-3 mb-4 border rounded-md"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              class="w-full p-3 mb-4 border rounded-md"
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              class="w-full p-3 mb-4 border rounded-md"
+            />
+            <textarea
+              placeholder="Message"
+              class="w-full p-3 mb-4 border rounded-md h-32"
+            ></textarea>
+            <button
+              class="bg-yellow-500 text-black px-6 py-3 rounded-md font-bold w-full hover:bg-yellow-600"
+            >
+              SEND MESSAGE
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="py-10 bg-black text-white px-6 md:px-16 lg:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- About -->
+        <div>
+          <h2 class="text-lg font-bold">About</h2>
+          <p class="text-gray-400 mt-2">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </p>
+          <div class="flex gap-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#https://web.facebook.com/alvinmmonir"
+              class="text-gray-400 hover:text-white text-2xl"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-gray-400 hover:text-white text-2xl"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h2 class="text-lg font-bold">Links</h2>
+          <ul class="mt-2 text-gray-400 space-y-2">
+            <li><a href="#" class="hover:text-white">→ Home</a></li>
+            <li><a href="#" class="hover:text-white">→ About</a></li>
+            <li><a href="#" class="hover:text-white">→ Services</a></li>
+            <li><a href="#" class="hover:text-white">→ Projects</a></li>
+            <li><a href="#contact" class="hover:text-white">→ Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h2 class="text-lg font-bold">Services</h2>
+          <ul class="mt-2 text-gray-400 space-y-2">
+            <li><a href="#" class="hover:text-white">→ Web Design</a></li>
+            <li><a href="#" class="hover:text-white">→ Web Development</a></li>
+            <li>
+              <a href="#" class="hover:text-white">→ Business Strategy</a>
+            </li>
+            <li><a href="#" class="hover:text-white">→ Data Analysis</a></li>
+            <li><a href="#" class="hover:text-white">→ Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h2 class="text-lg font-bold">Have a Questions?</h2>
+          <ul class="mt-2 text-gray-400 space-y-2">
+            <li>
+              <i class="fas fa-map-marker-alt mr-2"></i> 203 Fake St. Mountain
+              View, San Francisco, California, USA
+            </li>
+            <li><i class="fas fa-phone-alt mr-2"></i> +2 392 3929 210</li>
+            <li>
+              <i class="fas fa-envelope mr-2"></i> alvinmonir411@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="text-center text-gray-400 mt-10 border-t border-gray-700 pt-4"
+      >
+        Copyright ©2025 All rights reserved | This template is made with
+        <i class="fas fa-heart text-red-500"></i> by ALVIN MONIR
+      </div>
+    </footer>
   </body>
 </html>
